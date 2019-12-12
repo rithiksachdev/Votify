@@ -30,21 +30,21 @@ admin.initializeApp({
 
 
 var firebaseConfig = {
-  apiKey: "AIzaSyDApA3Zn0qE8he4DW5GRw0Vo_m7hXP3QJQ",
-  authDomain: "votify-5c0a0.firebaseapp.com",
-  databaseURL: "https://votify-5c0a0.firebaseio.com",
-  projectId: "votify-5c0a0",
-  storageBucket: "votify-5c0a0.appspot.com",
-  messagingSenderId: "955581230081",
-  appId: "1:955581230081:web:b56f87450bb461ff9b6400",
-  measurementId: "G-8W97CPCNQN"
+  apiKey: "*** your one here  ***",
+  authDomain: "***",
+  databaseURL: "***",
+  projectId: "***",
+  storageBucket: "***",
+  messagingSenderId: "***",
+  appId: "***",
+  measurementId: "****"
 };
 firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 const fs = require("fs");
 const NewsAPI = require("newsapi");
-const newsapi = new NewsAPI("c2edbe5a85dc4fcf8ae483e628050f3e");
-const secretkey = "6LcEwcYUAAAAABweI1UGI9L4bSIvt7PFBt9X8WWq";
+const newsapi = new NewsAPI("** your one goes here **");
+const secretkey = "***";
 
 newsapi.v2
   .topHeadlines({
