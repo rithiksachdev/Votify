@@ -1,0 +1,11 @@
+svg {
+  height: 80%;
+  width: 100%;
+  position: relative;
+}
+button:active {
+  background-color: yellowgreen;
+}
+button:focus {
+  background-color: yellowgreen;
+}
