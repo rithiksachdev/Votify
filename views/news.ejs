@@ -1,0 +1,43 @@
+<% include partials/header.ejs %> <% include partials/fnavbar.ejs %> <% include
+partials/footer.ejs %>
+<br />
+<br>
+<section>
+    <div class="topinfo">
+        <div class="sinfo">
+            <br>
+            <h1 style="text-align: center;"><strong>NEWS STAND</strong></h1>
+            <br />
+            <div class="owl-carousel owl-theme" id="nowl">
+
+                <% for(var i=0; i < 10; i++) { %>
+                <div class="item">
+                    <h4 style="text-align: center; margin: 0;">
+                        <strong>
+                            <% if(typeof(newsdata.articles[i].title) == void(0) || typeof(newsdata.articles[i].title) === undefined)
+                            {
+                                console.log("undefined");
+
+                            }
+                            else
+                            {
+                                newsdata.articles[i].title
+                            } %>
+                        </strong>
+                    </h4>
+                    <img src="<%= newsdata.articles[i].urlToImage %>" />
+                    <br>
+                    <br>
+                    <h6 style="text-align: center; margin: 0;"><%= newsdata.articles[i].description %></h6>
+                </div>
+                <% } %>
+            </div>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+    </div>
+</section>
+
+<% include partials/footer.ejs %>

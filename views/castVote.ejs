@@ -1,0 +1,96 @@
+<% include partials/header.ejs %> <% include partials/fnavbar.ejs %> <% include
+partials/footer.ejs %>
+
+<link href="/css/cast.css" rel="stylesheet" />
+<script src="/js/fileupload.js" type="text/javascript"></script>
+<br />
+<script>
+  $(document).ready(function () {
+    $(".form-wrapper .button").click(function () {
+      var button = $(this);
+      var currentSection = button.parents(".section");
+      var currentSectionIndex = currentSection.index();
+      var headerSection = $(".steps li").eq(currentSectionIndex);
+      currentSection
+        .removeClass("is-active")
+        .next()
+        .addClass("is-active");
+      headerSection
+        .removeClass("is-active")
+        .next()
+        .addClass("is-active");
+
+      $(".form-wrapper").submit(function (e) {
+        e.preventDefault();
+      });
+
+      if (currentSectionIndex === 3) {
+        $(document)
+          .find(".form-wrapper .section")
+          .first()
+          .addClass("is-active");
+        $(document)
+          .find(".steps li")
+          .first()
+          .addClass("is-active");
+      }
+    });
+  });
+</script>
+<section>
+  <div class="topinfo">
+    <div class="sinfo">
+
+      <div class="container">
+        <div class="wrapper">
+          <form class="form-wrapper" method="POST">
+            <h3 style="text-align: center;">Your Details</h3>
+            <input type="text" name="ID" id="ID" placeholder="Voter ID(RMP1234567)" />
+            <input type="text" name="name" id="name" placeholder="Name" />
+            <input type="text" name="fname" id="fname" placeholder="Father's Name" />
+            <input type="text" name="address" id="address" placeholder="Address" />
+            <input type="email" name="email" id="email" placeholder="Email" />
+            <input type="date" name="dob" id="dob" placeholder="Date of Birth" />
+            <h3 style="text-align: center;">Vote for your party</h3>
+            <div class="row cf" id="voteop">
+              <div class="four col">
+                <input type="radio" name="r1" id="r1" value="Congress" />
+                <label for="r1">
+                  <h4>Congress</h4>
+                </label>
+              </div>
+              <div class="four col">
+                <input type="radio" name="r1" id="r2" value="BJP" /><label for="r2">
+                  <h4>BJP</h4>
+                </label>
+              </div>
+              <div class="four col">
+                <input type="radio" name="r1" id="r3" value="AAP" /><label for="r3">
+                  <h4>AAP</h4>
+                </label>
+              </div>
+              <div class="four col">
+                <input type="radio" name="r1" id="r4" value="BSP" /><label for="r4">
+                  <h4>BSP</h4>
+                </label>
+              </div>
+            </div>
+            <h3 style="text-align: center;">Confirm Your Vote</h3>
+            <div style="text-align: center;">
+              <label type="text" aria-placeholder="">YOU ACCEPT THE TERM AND CONDITIONS AND YOU CAN'T VOTE AGAIN
+              </label><br />
+              <input type="checkbox" />
+              <label type="text">I Agree to the terms and conditions</label><br />
+              <button type="submit" class="btn btn-primary">Submit<a href="/castVote"></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+<br>
+<br>
+<br>
+<% include partials/footer.ejs %>
